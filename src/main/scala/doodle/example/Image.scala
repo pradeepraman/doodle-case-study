@@ -1,6 +1,7 @@
 package doodle.example
 
 import doodle.backend.Canvas
+import doodle.core.{Line, Color, Stroke}
 
 sealed trait Image {
 
@@ -15,7 +16,10 @@ sealed trait Image {
 
   def draw(canvas: Canvas): Unit = {
     this match {
-      case Circle(r) => canvas.circle(0.0, 0.0, r)
+      case Circle(r) =>
+        canvas.circle(0.0, 0.0, r)
+        canvas.setStroke(Stroke(1.0, Color.darkBlue, Line.Cap.Round, Line.Join.Round))
+        canvas.stroke()
       case Rectangle(h, w) => canvas.rectangle(-w/2, h/2, w/2, -h/2)
     }
   }
