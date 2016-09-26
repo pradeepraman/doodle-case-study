@@ -1,7 +1,6 @@
 package doodle
 
 object Main extends App {
-  import doodle.core._
   import doodle.jvm.Java2DCanvas
   import doodle.example._
   import javax.swing.JFrame
@@ -9,5 +8,6 @@ object Main extends App {
   val canvas = Java2DCanvas.canvas
   canvas.panel.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)
 
-  Spiral.draw(canvas)
+  Circle(10).draw(canvas)
+  //Rectangle(10,10).draw(canvas)
 }

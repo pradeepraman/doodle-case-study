@@ -12,3 +12,5 @@ initialCommands in console := """
 cleanupCommands in console := """
       |doodle.jvm.quit()
     """.trim.stripMargin
+resolvers += Resolver.bintrayRepo("underscoreio", "training")
+libraryDependencies += "underscoreio" %% "doodle" % "0.6.5"
